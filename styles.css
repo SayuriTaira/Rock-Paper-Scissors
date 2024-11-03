@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: rgb(116, 0, 179);
+    user-select: none;
+    overflow: hidden;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(226, 226, 226);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 600px;
+    height: 400px;
+    background-color: white;
+    border-radius: 8px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.container.start .player-image{
+    animation: userShake 0.7s ease-out;
+}
+
+@keyframes userShake {
+    50% {
+        transform: rotate(10deg);
+    }
+}
+
+.container.start .cpu-image {
+    animation: cpuShake 0.7s ease-out;
+}
+
+@keyframes cpuShake {
+    50% {
+        transform: rotateY(180deg);
+    }
+}
+
+.container.start .options {
+    pointer-events: none;
+}
+
+.result-images {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 20px;
+}
+
+.player-image {
+    transform: rotate(90deg);
+    margin-right: 80px;
+}
+
+.cpu-image {
+    transform: rotate(-90deg) rotateY(180deg);
+}
+
+.player-image, .cpu-image {
+    width: 150px;
+    height: 150px;
+}
+
+.result {
+    font-weight: bold;
+    font-size: 30px;
+    transform: translateX(230px) translateY(170px);
+}
+
+.options {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 200px;
+}
+
+.button {
+    width: 95px;
+    height: 100px;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.button:hover {
+    opacity: 1;
+}
+
+.options div {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.options div:nth-child(2),
+.options div:nth-child(3) {
+    margin-left: 50px;
+}
+
+.scissors {
+    margin-right: 8px;
+}
+
+.active {
+    opacity: 1;
+}
